@@ -3,7 +3,9 @@
 * when use spring cloud config to get properties remotely, 
 the validations on GatewayProperties.class and my own class won`t work 
 even there is nothing in my remote config file.
-But HeartbeatProperties.class does validation.
+But HeartbeatProperties.class does validation. As you can see the config about gateway.routes in 
+bootstrap-dev.yml is illegal obviously, but the application start successful.
+* the myGateway-dev.yml in /resources is the remote config file in my remote config server.
 * When debug the application, I found the  HeartbeatProperties has been 
 initialized twice, the fist one with ValidationBindHandler.class as bind handler,
 which will do the validations in onFinish(), the second one with ConfigurationPropertiesBinder.class
