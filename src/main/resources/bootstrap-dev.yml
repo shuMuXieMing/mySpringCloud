@@ -2,48 +2,9 @@ server:
   port: 8080
 Spring:
   cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: 172.19.79.1:6666,172.19.79.2:6666,172.19.79.3:6666
-    config:
-      label: feature/myGateway
-      discovery:
-        service-id: photon
-        enabled: true
-      fail-fast: true
-      retry:
-        max-attempts: 6
-        initial-interval: 1000
-        multiplier: 1.1
-        max-interval: 2000
-    consul:
-      host: 172.19.79.4
-      port: 8500
-      discovery:
-        instance-id: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port}
-        prefer-ip-address: true
-        health-check-critical-timeout: 20s
-    #        heartbeat:
-    #          ttlValue: 0
-    #          ttlUnit:
-    #          intervalRatio: 0.0
     gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods: "*"
-            allowedHeaders: "*"
       routes:
         - id:
   kafka:
-    bootstrap-servers: 172.19.79.1:6666,172.19.79.2:6666,172.19.79.3:6666
-    consumer:
-      client-id: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port}
-      group-id: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port}
-      auto-offset-reset: latest
-      enable-auto-commit: true
-      auto-commit-interval: 100
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    #    a default kafka instance[http://kafka.apache.org/quickstart] in local
+    bootstrap-servers: localhost:9092

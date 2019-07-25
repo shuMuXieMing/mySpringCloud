@@ -22,3 +22,9 @@ validations on GatewayProperties.class work properly.
     * springBootVersion : 2.1.2.RELEASE
     * springCloudVersion : Greenwich.RC2
 * Thanks for your concerns!
+# Minimize
+* When minimizing the application, I found the validation bug was cause by dependency on  
+'org.springframework.cloud:spring-cloud-starter-bus-kafka'.When add this dependency and config
+'Spring.kafka' properly, validations on GatewayProperties not work.
+* 'bootstrap-dev.yml' is the minimum config to reproduce this error. The kafka is a default 
+instance run in local.
