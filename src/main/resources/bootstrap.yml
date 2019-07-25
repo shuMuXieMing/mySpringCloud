@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: myGateway
+  profiles:
+    active: dev
+
+management:
+  health:
+    redis:
+      enabled: false
+  endpoint:
+    bindings:
+      enabled: false
