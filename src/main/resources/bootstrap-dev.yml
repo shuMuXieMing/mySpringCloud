@@ -5,7 +5,7 @@ Spring:
     stream:
       kafka:
         binder:
-          brokers: 172.19.79.1:6667,172.19.79.2:6667,172.19.79.3:6667
+          brokers: 172.19.79.1:6666,172.19.79.2:6666,172.19.79.3:6666
     config:
       label: feature/myGateway
       discovery:
@@ -19,7 +19,7 @@ Spring:
         max-interval: 2000
     consul:
       host: 172.19.79.4
-      port: 32559
+      port: 8500
       discovery:
         instance-id: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port}
         prefer-ip-address: true
@@ -38,7 +38,7 @@ Spring:
       routes:
         - id:
   kafka:
-    bootstrap-servers: 172.19.79.1:6667,172.19.79.2:6667,172.19.79.3:6667
+    bootstrap-servers: 172.19.79.1:6666,172.19.79.2:6666,172.19.79.3:6666
     consumer:
       client-id: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port}
       group-id: ${spring.application.name}-${spring.cloud.client.ip-address}-${server.port}
