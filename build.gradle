@@ -39,7 +39,6 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery'
 	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
 	implementation 'org.springframework.cloud:spring-cloud-starter'
-	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	implementation 'org.springframework.cloud:spring-cloud-starter-bus-kafka'
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
